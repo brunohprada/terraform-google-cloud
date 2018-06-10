@@ -6,7 +6,7 @@ variable "network_name" {
   description = "Criação do nome da VPC (Network)"
   default = "network"
 }
-variable "subnetwork-name" {
+variable "subnetwork_name" {
   description = "Nome da subnetwork"
   default = "subnetwork"
 }
