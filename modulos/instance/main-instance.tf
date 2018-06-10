@@ -12,7 +12,7 @@ resource "google_compute_instance" "default" {
   }
 
   network_interface {
-      network = "default"
+      network = "${var.prefix_name}-${var.network_name}"
   }
 
   metadata {
