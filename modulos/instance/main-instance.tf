@@ -1,5 +1,5 @@
 resource "google_compute_instance" "default" {
-  name = "${var.projeto}-${var.instance_name}"
+  name = "${var.instance_name}"
   machine_type = "${var.machine_type}"
   zone = "${var.zone}"
 
@@ -12,7 +12,7 @@ resource "google_compute_instance" "default" {
   }
 
   network_interface {
-      network = "default"
+      network = "${var.network_instance}"
   }
 
   metadata {

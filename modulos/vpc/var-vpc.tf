@@ -1,6 +1,6 @@
 variable "prefix_name" {
   description = "Esta variável será utilizada como prefixo antes dos nomes."
-  default = "test"
+  default = "projeto"
 }
 variable "network_name" {
   description = "Criação do nome da VPC (Network)"
@@ -17,8 +17,4 @@ variable "network_cidr" {
 variable "region" {
   description = "Região padrão para criação do ambiente de rede."
   default = "southamerica-east1"
-}
-variable "zone" {
-  description = "Zona de disponibilidade para criação das subnets"
-  default = "southamerica-east1-a"
 }
