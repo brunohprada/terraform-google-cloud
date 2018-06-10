@@ -1,10 +1,14 @@
+variable "prefix_name" {
+  description = "Esta variável será utilizada como prefixo antes dos nomes."
+  default = "test"
+}
 variable "network_name" {
   description = "Criação do nome da VPC (Network)"
   default = "network"
 }
-variable "prefix_name" {
-  description = "Esta variável será utilizada como prefixo antes dos nomes."
-  default = "test"
+variable "subnetwork-name" {
+  description = "Nome da subnetwork"
+  default = "subnetwork"
 }
 variable "network_cidr" {
   description = "Range de IP para a subnet"
