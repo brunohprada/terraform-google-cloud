@@ -2,5 +2,5 @@ module "vpc" {
   source = "modulos/vpc"
 }
 module "instance" {
-  source = "instance"
+  source = "modulos/instance"
 }
