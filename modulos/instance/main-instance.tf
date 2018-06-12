@@ -2,6 +2,7 @@ resource "google_compute_disk" "default" {
   name = "test-disk"
   type = "pd-ssd"
   zone = "${var.zone}"
+  size = "50"
   labels {
       enviroment = ""
   }
@@ -38,4 +39,6 @@ resource "google_compute_instance" "default" {
   metadata {
       enviroment = "${var.enviroment}"
   }
+
+  depends_on = ["${google_compute_disk.default}"]
 }
