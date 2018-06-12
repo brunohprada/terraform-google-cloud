@@ -18,5 +18,5 @@ module "instance" {
     machine_type = "n1-standard-1"
     zone = "southamerica-east1-a"
     network_instance = "projeto-subnetwork"
-    depends_on = ["google_compute_subnetwork.default"]
+    depends_on = ["module.vpc"]
 }
