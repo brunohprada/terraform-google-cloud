@@ -14,6 +14,11 @@ resource "google_compute_instance" "default" {
       }
   }
 
+  attached_disk {
+      size="100"
+      type = "pd-ssd"
+  }
+
   network_interface {
       network = "default"
       // ${var.network_instance}
