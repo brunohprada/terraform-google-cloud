@@ -27,7 +27,7 @@ resource "google_compute_instance" "default" {
   attached_disk {
       source = "test-disk"
       device_name = "data"
-      mode = "READ_WRITE""
+      mode = "READ_WRITE"
   }
 
   network_interface {
