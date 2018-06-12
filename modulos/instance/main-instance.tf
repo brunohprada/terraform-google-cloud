@@ -12,10 +12,6 @@ resource "google_compute_instance" "default" {
           size = "20"
           type = "pd-ssd"
       }
-
-      attached_disk {
-          device_name = "dados"
-      }
   }
 
   network_interface {
