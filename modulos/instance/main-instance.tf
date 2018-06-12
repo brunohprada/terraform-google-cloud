@@ -1,3 +1,13 @@
+resource "goolge_compute_disk" "default" {
+  name = "test-disk"
+  type = "pd-ssd"
+  zone = "${var.zone}"
+  labels {
+      enviroment = ""
+  }
+}
+
+
 resource "google_compute_instance" "default" {
   name = "${var.instance_name}"
   machine_type = "${var.machine_type}"
@@ -15,9 +25,9 @@ resource "google_compute_instance" "default" {
   }
 
   attached_disk {
-      source = "disk-test"
+      source = "test-disk"
       device_name = "data"
-      mode = "READ_WRITE"
+      mode = "READ_WRITE""
   }
 
   network_interface {
@@ -28,4 +38,6 @@ resource "google_compute_instance" "default" {
   metadata {
       enviroment = "${var.enviroment}"
   }
+
+  depends_on = "${goolge_compute_disk.default}"
 }
