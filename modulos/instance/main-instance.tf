@@ -1,4 +1,4 @@
-resource "goolge_compute_disk" "default" {
+resource "google_compute_disk" "default" {
   name = "test-disk"
   type = "pd-ssd"
   zone = "${var.zone}"
@@ -39,5 +39,5 @@ resource "google_compute_instance" "default" {
       enviroment = "${var.enviroment}"
   }
 
-  depends_on = "${goolge_compute_disk.default}"
+  depends_on = "${google_compute_disk.default}"
 }
