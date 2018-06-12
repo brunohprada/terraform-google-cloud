@@ -14,6 +14,12 @@ resource "google_compute_instance" "default" {
       }
   }
 
+  disk {
+      name = "disco-teste"
+      size = "50"
+      type = "pd-ssd"
+  }
+
   network_interface {
       network = "default"
       // ${var.network_instance}
