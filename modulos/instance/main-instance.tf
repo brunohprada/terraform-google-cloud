@@ -38,6 +38,4 @@ resource "google_compute_instance" "default" {
   metadata {
       enviroment = "${var.enviroment}"
   }
-
-  depends_on = "${google_compute_disk.default}"
 }
