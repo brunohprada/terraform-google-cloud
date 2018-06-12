@@ -14,10 +14,10 @@ resource "google_compute_instance" "default" {
       }
   }
 
-  disk {
-      name = "disco-teste"
-      size = "50"
-      type = "pd-ssd"
+  attached_disk {
+      source = "disk-test"
+      device_name = "data"
+      mode = "READ_WRITE"
   }
 
   network_interface {
