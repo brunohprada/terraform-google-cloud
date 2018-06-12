@@ -3,6 +3,7 @@ resource "google_compute_instance" "default" {
   machine_type = "${var.machine_type}"
   zone = "${var.zone}"
 
+  // Network Tags
   tags = ["instance", "test"]
 
   boot_disk {
@@ -14,10 +15,11 @@ resource "google_compute_instance" "default" {
   }
 
   network_interface {
-      network = "${var.network_instance}"
+      network = "default"
+      // ${var.network_instance}
   }
 
   metadata {
-      instance = "test"
+      enviroment = "${var.enviroment}"
   }
 }

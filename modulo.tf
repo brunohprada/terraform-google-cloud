@@ -17,5 +17,5 @@ module "instance" {
     instance_name = "instance-test"
     machine_type = "n1-standard-1"
     zone = "southamerica-east1-a"
-    network_instance = "test-subnetwork"
+    network_instance = "projeto-subnetwork"
 }
