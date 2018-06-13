@@ -32,8 +32,7 @@ resource "google_compute_instance" "default" {
   }
 
   network_interface {
-      network = "default"
-      // ${var.network_instance}
+      network = "${var.network_instance}"
   }
 
   metadata {
