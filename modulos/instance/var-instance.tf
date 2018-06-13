@@ -18,3 +18,11 @@ variable "enviroment" {
   description = "Meta tag para destacar o ambiente"
   default = ""
 }
+variable "instance_count" {
+  description = "Número de instâncias que serão criadas"
+  default = 1 
+  }
+variable "disk_name" {
+  description = "Nome do disco que será atachado no servidor"
+  default = "disk"
+}

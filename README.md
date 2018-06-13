@@ -15,5 +15,4 @@ exemplo: **10.10.108.0/24**
 `[region]`
 exemplo: **southamerica-east1**
 
-> RESULTADO PARA CRIAR A VPC:
 > _projeto-network - projeto-subnetwork (10.10.108.0/24) - southamerica-east1_

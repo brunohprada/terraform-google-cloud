@@ -1,5 +1,5 @@
 resource "google_compute_disk" "default" {
-  name = "test-disk"
+  name = "${var.disk_name}-${count.index + 1}"
   type = "pd-ssd"
   zone = "${var.zone}"
   size = "50"
@@ -10,17 +10,18 @@ resource "google_compute_disk" "default" {
 
 
 resource "google_compute_instance" "default" {
-  name = "${var.instance_name}"
+  count = "${var.instance_count}"
+  name = "${var.instance_name}-${count.index + 1}"
   machine_type = "${var.machine_type}"
   zone = "${var.zone}"
 
   // Network Tags
-  tags = ["instance", "test"]
+  tags = ["${var.instance_name}"]
 
   boot_disk {
       initialize_params {
           image = "debian-cloud/debian-9"
-          size = "20"
+          size = "10"
           type = "pd-ssd"
       }
   }
