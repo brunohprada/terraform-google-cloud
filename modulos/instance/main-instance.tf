@@ -1,14 +1,13 @@
 resource "google_compute_disk" "default" {
+  count = "${var.instance_count}"
   name = "${var.disk_name}-${count.index + 1}"
   type = "pd-ssd"
   zone = "${var.zone}"
   size = "50"
   labels {
-      enviroment = ""
+      enviroment = "dev"
   }
 }
-
-
 resource "google_compute_instance" "default" {
   count = "${var.instance_count}"
   name = "${var.instance_name}-${count.index + 1}"
@@ -27,7 +26,7 @@ resource "google_compute_instance" "default" {
   }
 
   attached_disk {
-      source = "test-disk"
+      source = "${google_compute_disk.default.name}"
       device_name = "data"
       mode = "READ_WRITE"
   }
