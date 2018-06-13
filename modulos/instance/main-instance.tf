@@ -33,6 +33,7 @@ resource "google_compute_instance" "default" {
 
   network_interface {
       network = "${var.network_instance}"
+      subnetwork = ""
   }
 
   metadata {

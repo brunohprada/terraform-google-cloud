@@ -14,6 +14,11 @@ variable "network_instance" {
   description = "Definição da rede que a instância irá utilizar"
   default = "default"
 }
+variable "subnetwork_instance" {
+description = "Definição da subrede que a instância irá utilizar"
+  default = "default"
+}
+
 variable "enviroment" {
   description = "Meta tag para destacar o ambiente"
   default = ""
